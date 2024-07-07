@@ -24,5 +24,5 @@ func main() {
 	router.POST("/check_text", handlers.CheckText)
 
 	// 启动服务器
-	router.Run(":8085")
+	router.Run(":8086")
 }
