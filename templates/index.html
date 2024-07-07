@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sensitive Words Checker</title>
+    <title>敏感词检测</title>
 </head>
 <body>
-<h1>Sensitive Words Checker</h1>
+<h1>敏感词检测</h1>
 <form id="checkForm" method="POST" action="/check_text">
-    <label for="text">Enter text to check:</label>
+    <label for="text">输入要检查的语句:</label>
     <textarea id="text" name="text" rows="4" cols="50"></textarea><br><br>
-    <input type="submit" value="Check">
+    <input type="submit" value="检测">
 </form>
 <p id="result"></p>
 
@@ -27,7 +27,7 @@
         })
             .then(response => response.json())
             .then(data => {
-                var result = data.contains_sensitive_word ? "Contains sensitive words." + data.word : "Does not contain sensitive words.";
+                var result = data.contains_sensitive_word ? "有敏感词：" + data.word : "没包含敏感词";
                 document.getElementById("result").textContent = result;
             })
             .catch(error => console.error('Error:', error));
